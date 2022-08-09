@@ -2,9 +2,14 @@ import useForm from './hooks/useForm';
 import Input from './components/Input'
 import Card from './components/Card'
 import Container from './components/Container'
+import Button from './components/Button'
 
 function App() {
-  const [ form, handleChange] = useForm({ name: '', lastname: '' })
+  const [ form, handleChange] = useForm({ 
+    name: '', 
+    lastname: '',
+    email: ''
+  })
   console.log(form)
 
   return (
@@ -16,12 +21,23 @@ function App() {
               name="name" 
               label="Name"
               value={form.name} 
-              onChange={handleChange} />
+              onChange={handleChange} 
+            />
             <Input 
               name="lastname" 
               label="Lastame"
               value={form.lastname} 
-              onChange={handleChange} />
+              onChange={handleChange}
+            />
+            <Input 
+              name="email" 
+              label="Email"
+              value={form.email} 
+              onChange={handleChange} 
+            />
+            <Button>
+              Send
+            </Button>
           </form>
         </div>
       </Card>
